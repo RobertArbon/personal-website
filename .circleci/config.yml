@@ -4,7 +4,9 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      - image: "cimg/base:stable"
+      - image: node:24
+    resource_class: large
+    parallelism: 10
     steps:
       - checkout
       - restore_cache:
